@@ -19,7 +19,7 @@ class Echofun:
         imgurclient = ImgurClient("ad8952f4d3e875e", "7438169dd1b096d0dca330e826aeb120fbec6bcc")
         if text[0] != ():
             randpage = randint(0, 9) #randomize page 0-9
-            items = imgurclient.gallery_search(" ".join(text[0:len(text)]), advanced=None, sort='time', window='all', page=randpage)
+            items = imgurclient.subreddit_gallery(text[0], sort='time', window='all', page=randpage)
             rand = randint(0, len(items)) #randomize result
             if len(items) < 1:
                 await self.bot.say("No result for: {}".format(text[0]))
