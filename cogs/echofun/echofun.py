@@ -18,13 +18,13 @@ class Echofun:
         """sr [keyword] - Retrieves a random picture from subreddit"""
         imgurclient = ImgurClient("1fd3ef04daf8cab", "f963e574e8e3c17993c933af4f0522e1dc01e230")
         if text[0] != ():
-            rand = randint(0, 29) #60 results per generated page
-            randpage = randint(0, 9) #random page 0
+            randpage = randint(0, 9) #randomize page 0-9
             items = imgurclient.gallery_search(" ".join(text[0:len(text)]), advanced=None, sort='time', window='all', page=randpage)
+            rand = randint(0, len(items)) #randomize result
             if len(items) < 1:
-                await self.bot.say("Your search terms gave no results.")
+                await self.bot.say("No result for: {}".format(text[0]))
             else:
-                await self.bot.say(len(items)) #items[rand].link)
+                await self.bot.say(items[rand].link)
         
         elif text[0] == ():
             await self.bot.say("Type help sr for details.")
