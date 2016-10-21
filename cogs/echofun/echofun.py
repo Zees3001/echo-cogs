@@ -20,7 +20,7 @@ class Echofun:
         if text[0] != ():
             rand = randint(0, 59) #60 results per generated page
             randpage = randint(0, 9) #random page 0
-            items = imgurclient.gallery_search(" ".join(text[1:len(text)]), advanced=None, sort='time', window='all', page=randpage)
+            items = imgurclient.gallery_search(" ".join(text[1:len(text)]), advanced=None, sort='time', window='all', page=0)
             if len(items) < 1:
                 await self.bot.say("Your search terms gave no results.")
             else:
