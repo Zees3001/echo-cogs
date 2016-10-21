@@ -7,9 +7,9 @@ import random
 class Echofun:
     """echo fun commands."""
 
-	def __init__(self, bot):
-	    self.bot = bot
-	    #Reserved for further ... stuff
+    def __init__(self, bot):
+        self.bot = bot
+        #Reserved for further ...
 
 	"""Commands section"""
 
