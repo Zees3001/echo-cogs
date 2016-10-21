@@ -16,7 +16,7 @@ class Echofun:
     @commands.command(no_pm=True)
     async def sr(self, *text):
         """sr [keyword] - Retrieves a random picture from subreddit"""
-        imgurclient = ImgurClient("1fd3ef04daf8cab", "f963e574e8e3c17993c933af4f0522e1dc01e230")
+        imgurclient = ImgurClient("ad8952f4d3e875e", "7438169dd1b096d0dca330e826aeb120fbec6bcc")
         if text[0] != ():
             randpage = randint(0, 9) #randomize page 0-9
             items = imgurclient.gallery_search(" ".join(text[0:len(text)]), advanced=None, sort='time', window='all', page=randpage)
