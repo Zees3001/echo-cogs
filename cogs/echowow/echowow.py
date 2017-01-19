@@ -210,11 +210,10 @@ class EchoWoW:
         target_region = default_region
         target_server = default_server
         try:
-            i = text[0].split(' ')
-            name = i[1]
-            if len(i) == 3 and i[2].lower() not in region_locale.keys():
+            name = text[0]
+            if text[1] and text[1].lower() not in region_locale.keys():
                 target_server = i[2].lower()
-            if len(i) == 4 and i[3].lower() in region_locale.keys():
+            if text[2] and text[2].lower() in region_locale.keys():
                 target_region = i[3].lower()
             character_info = get_char(name, target_server, target_region)
             await self.bot.say(character_info)
