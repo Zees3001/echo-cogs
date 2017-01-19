@@ -153,6 +153,7 @@ def get_char(name, server, target_region):
     enchants = get_enchants(player_dict)
     tov_progress = get_raid_progression(player_dict, "Trial of Valor")
     en_progress = get_raid_progression(player_dict, "The Emerald Nightmare")
+    nh_progress = get_raid_progression(player_dict, "The Nighthold")
     mythic_progress = get_mythic_progression(player_dict)
 
     armory_url = 'http://{}.battle.net/wow/{}/character/{}/{}/advanced'.format(
@@ -181,6 +182,10 @@ def get_char(name, server, target_region):
                                                                            tov_progress["normal"],
                                                                            tov_progress["heroic"],
                                                                            tov_progress["mythic"])
+    return_string += "NH: {1}/{0} (N), {2}/{0} (H), {3}/{0} (M)\n".format(nh_progress["total_bosses"],
+                                                                           nh_progress["normal"],
+                                                                           nh_progress["heroic"],
+                                                                           nh_progress["mythic"])
 
     # Gems
     return_string += "Gems Equipped: %s/%s\n" % (
@@ -212,10 +217,10 @@ class EchoWoW:
         try:
             name = text[0]
             if len(text) == 2 and text[1].lower() not in region_locale.keys():
-                target_server = i[2].lower()
+                target_server = text[2].lower()
             if len(text) == 3 and text[2].lower() in region_locale.keys():
-                target_server = i[2].lower()
-                target_region = i[3].lower()
+                target_server = text[2].lower()
+                target_region = text[3].lower()
             character_info = get_char(name, target_server, target_region)
             await self.bot.say(character_info)
         except Exception as e:
