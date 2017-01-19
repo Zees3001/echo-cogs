@@ -206,23 +206,23 @@ class EchoWoW:
     """Commands section"""
 
     @commands.command(no_pm=True)
-    async def wowcheck(client, message):
+    async def wowcheck(self, *text):
         target_region = default_region
         target_server = default_server
         try:
-            i = str(message.content).split(' ')
+            i = text.split(' ')
             name = i[1]
             if len(i) == 3 and i[2].lower() not in region_locale.keys():
                 target_server = i[2].lower()
             if len(i) == 4 and i[3].lower() in region_locale.keys():
                 target_region = i[3].lower()
             character_info = get_char(name, target_server, target_region)
-            await client.send_message(message.channel, character_info)
+            await self.bot.say(character_info)
         except Exception as e:
             print(e)
-            await client.send_message(message.channel, "Error With Name or Server\n"
-                                                       "Use: ?wowcheck <name> <opt. server> <opt. region>\n"
-                                                       "Hyphenate Two Word Servers (Ex: Twisting-Nether)")
+            await self.bot.say("Error With Name or Server\n"
+                               "Use: ?wowcheck <name> <opt. server> <opt. region>\n"
+                               "Hyphenate Two Word Servers (Ex: Twisting-Nether)")
 
 class ModuleNotFound(Exception):
     def __init__(self, m):
