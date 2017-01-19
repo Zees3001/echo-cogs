@@ -217,10 +217,10 @@ class EchoWoW:
         try:
             name = text[0]
             if len(text) == 2 and text[1].lower() not in region_locale.keys():
-                target_server = text[2].lower()
+                target_server = text[1].lower()
             if len(text) == 3 and text[2].lower() in region_locale.keys():
-                target_server = text[2].lower()
-                target_region = text[3].lower()
+                target_server = text[1].lower()
+                target_region = text[2].lower()
             character_info = get_char(name, target_server, target_region)
             await self.bot.say(character_info)
         except Exception as e:
