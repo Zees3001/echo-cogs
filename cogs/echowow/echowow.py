@@ -210,7 +210,7 @@ class EchoWoW:
         target_region = default_region
         target_server = default_server
         try:
-            i = text.split(' ')
+            i = text[0].split(' ')
             name = i[1]
             if len(i) == 3 and i[2].lower() not in region_locale.keys():
                 target_server = i[2].lower()
