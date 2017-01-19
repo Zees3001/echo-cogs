@@ -22,7 +22,11 @@ LEG_WITH_SOCKET = [
 
 ENCHANTABLE_SLOTS = ["neck", "back", "finger1", "finger2"]
 
-config = json.loads(open('config.json').read())  # Load Configs
+config = {
+  "blizzard_api_key": "33weunqrkpvj4zzcbx29tstyjrcubbyn",
+  "default_region": "eu",
+  "default_server": "Frostwolf"
+}
 API_KEY = config["blizzard_api_key"]
 default_region = config["default_region"]
 default_server = config["default_server"]
