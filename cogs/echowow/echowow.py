@@ -209,7 +209,9 @@ class EchoWoW:
     async def wowcheck(self, *text):
         target_region = default_region
         target_server = default_server
-        try:
+        await self.bot.say(text[0])
+        
+        """try:
             name = text[0]
             if text[1] and text[1].lower() not in region_locale.keys():
                 target_server = i[2].lower()
@@ -221,7 +223,7 @@ class EchoWoW:
             print(e)
             await self.bot.say("Error With Name or Server\n"
                                "Use: ?wowcheck <name> <opt. server> <opt. region>\n"
-                               "Hyphenate Two Word Servers (Ex: Twisting-Nether)")
+                               "Hyphenate Two Word Servers (Ex: Twisting-Nether)")"""
 
 class ModuleNotFound(Exception):
     def __init__(self, m):
