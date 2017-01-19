@@ -7,12 +7,7 @@ import json
 import requests
 
 def setup(bot):
-    global ImgurClient
-    try:
-        from imgurpython import ImgurClient
-    except:
-        raise ModuleNotFound("imgurpython is not installed. Do 'pip3 install imgurpython' to use this cog.")
-    bot.add_cog(Echofun(bot))
+    bot.add_cog(EchoWoW(bot))
 
 LEG_WITH_SOCKET = [
     132369, 132410, 137044, 132444, 132449, 132452, 132460, 133973, 133974, 137037, 137038, 137039, 137040,
