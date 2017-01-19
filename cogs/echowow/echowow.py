@@ -209,13 +209,14 @@ class EchoWoW:
     async def wowcheck(self, *text):
         target_region = default_region
         target_server = default_server
-        await self.bot.say(text[0])
+        #await self.bot.say(text[0])
         
-        """try:
+        try:
             name = text[0]
-            if text[1] and text[1].lower() not in region_locale.keys():
+            if len(text) == 2 and text[1].lower() not in region_locale.keys():
                 target_server = i[2].lower()
-            if text[2] and text[2].lower() in region_locale.keys():
+            if len(text) == 3 and text[2].lower() in region_locale.keys():
+                target_server = i[2].lower()
                 target_region = i[3].lower()
             character_info = get_char(name, target_server, target_region)
             await self.bot.say(character_info)
