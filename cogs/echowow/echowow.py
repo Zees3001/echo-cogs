@@ -140,11 +140,11 @@ def get_artifact_info(player_dictionary):
 		index = achievements["criteria"].index(29395)
 		ar = achievements["criteriaQuantity"][index]
 
-    return {
-        "ar": ar,
-        "ap": ap,
-        "ak": ak
-    }	
+	return {
+    	"ar": ar,
+    	"ap": ap,
+    	"ak": ak
+	}	
 
 
 def get_char(name, server, target_region):
