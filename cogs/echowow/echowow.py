@@ -137,8 +137,8 @@ def get_artifact_info(player_dictionary):
 	ar = 0
 
 	if 29395 in achievements["criteria"]:
-        index = achievements["criteria"].index(29395)
-        ar = achievements["criteriaQuantity"][index]
+		index = achievements["criteria"].index(29395)
+		ar = achievements["criteriaQuantity"][index]
 
     return {
         "ar": ar,
