@@ -207,7 +207,7 @@ def get_char(name, server, target_region):
     return_string += "Equipped Item Level: %s\n" % equipped_ivl
 
     # Artifact
-    return_string += "Artifact --- Knowlegde: %s Rank: %s Total Power: %d\n" % (artifact_info["ak"], artifact_info ["ar"], group(artifact_info["ap"])
+    return_string += "Artifact --- Knowlegde: %s Rank: %s Total Power: %s\n" % (artifact_info["ak"], artifact_info ["ar"], group(artifact_info["ap"])
 
     # Mythic Progression
     return_string += "Mythics: +2: %s, +5: %s, +10: %s\n" % (mythic_progress["plus_two"],
