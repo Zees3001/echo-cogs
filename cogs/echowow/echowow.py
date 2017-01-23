@@ -141,9 +141,9 @@ def get_artifact_info(player_dictionary):
 		ar = achievements["criteriaQuantity"][index]
 
 	return {
-    	"ar": ar,
-    	"ap": ap,
-    	"ak": ak
+		"ar": ar,
+		"ap": ap,
+		"ak": ak
 	}	
 
 
@@ -186,9 +186,7 @@ def get_char(name, server, target_region):
     return_string += "Equipped Item Level: %s\n" % equipped_ivl
 
     # Artifact
-    return_string += "AK: %s AR: %s AP: %S\n" % (artifact_info["ak"],
-    											 artifact_info ["ar"],
-    											 artifact_info["ap"])
+    return_string += "AK: %s AR: %s AP: %s\n" % (artifact_info["ak"], artifact_info ["ar"], artifact_info["ap"])
 
     # Mythic Progression
     return_string += "Mythics: +2: %s, +5: %s, +10: %s\n" % (mythic_progress["plus_two"],
