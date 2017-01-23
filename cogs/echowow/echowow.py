@@ -33,6 +33,19 @@ region_locale = {
     'eu': ['eu', 'en_GB', 'en']
 }
 
+def group(n, sep = '.'):
+    s = str(abs(n))[::-1]
+    groups = []
+    i = 0
+    while i < len(s):
+        groups.append(s[i:i+3])
+        i+=3
+    retval = sep.join(groups)[::-1]
+    if n < 0:
+        return '-%s' % retval
+    else:
+        return retval
+
 def get_sockets(player_dictionary):
     """
     Return dict with total sockets and count of equipped gems and slots that are missing
@@ -194,7 +207,7 @@ def get_char(name, server, target_region):
     return_string += "Equipped Item Level: %s\n" % equipped_ivl
 
     # Artifact
-    return_string += "Artifact --- Knowlegde: %s Rank: %s Total Power: %s\n" % (artifact_info["ak"], artifact_info ["ar"], artifact_info["ap"])
+    return_string += "Artifact --- Knowlegde: %s Rank: %s Total Power: %d\n" % (artifact_info["ak"], artifact_info ["ar"], group(artifact_info["ap"])
 
     # Mythic Progression
     return_string += "Mythics: +2: %s, +5: %s, +10: %s\n" % (mythic_progress["plus_two"],
