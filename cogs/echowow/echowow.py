@@ -130,6 +130,22 @@ def get_mythic_progression(player_dictionary):
         "plus_ten": plus_ten
     }
 
+def get_artifact_info(player_dictionary):
+	achievements = player_dictionary["achievements"]
+	ak = 0
+	ap = 0
+	ar = 0
+
+	if 29395 in achievements["criteria"]:
+        index = achievements["criteria"].index(29395)
+        ar = achievements["criteriaQuantity"][index]
+
+    return {
+        "ar": ar,
+        "ap": ap,
+        "ak": ak
+    }	
+
 
 def get_char(name, server, target_region):
     r = requests.get("https://%s.api.battle.net/wow/character/%s/%s?fields=items+progression+achievements&locale=%s&apikey=%s" % (
@@ -155,6 +171,7 @@ def get_char(name, server, target_region):
     en_progress = get_raid_progression(player_dict, "The Emerald Nightmare")
     nh_progress = get_raid_progression(player_dict, "The Nighthold")
     mythic_progress = get_mythic_progression(player_dict)
+    artifact_info = get_artifact_info(player_dict)
 
     armory_url = 'http://{}.battle.net/wow/{}/character/{}/{}/advanced'.format(
         region_locale[target_region][0], region_locale[target_region][2], server, name)
@@ -167,6 +184,11 @@ def get_char(name, server, target_region):
 
     # iLvL
     return_string += "Equipped Item Level: %s\n" % equipped_ivl
+
+    # Artifact
+    return_string += "AK: %s AR: %s AP: %S\n" % (artifact_info["ak"],
+    											 artifact_info ["ar"],
+    											 artifact_info["ap"])
 
     # Mythic Progression
     return_string += "Mythics: +2: %s, +5: %s, +10: %s\n" % (mythic_progress["plus_two"],
