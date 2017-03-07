@@ -124,7 +124,7 @@ def get_mythic_progression(player_dictionary):
     plus_two = 0
     plus_five = 0
     plus_ten = 0
-    plus_fifteen = 0
+    plus_fifteen = 999
 
     if 33096 in achievements["criteria"]:
         index = achievements["criteria"].index(33096)
@@ -141,7 +141,6 @@ def get_mythic_progression(player_dictionary):
     if 32028 in achievements["criteria"]:
         index = achievements["criteria"].index(32028)
         plus_fifteen = achievements["criteriaQuantity"][index]
-        
 
     return {
         "plus_two": plus_two,
