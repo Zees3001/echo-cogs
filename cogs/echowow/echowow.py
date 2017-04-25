@@ -176,7 +176,6 @@ def get_artifact_info(player_dictionary):
         for trait in range(len(items["offHand"]["artifactTraits"])):
             artifactRank += items["offHand"]["artifactTraits"][trait]["rank"]
             ar = artifactRank - relicCount
-''' 
 
     if 30103 in achievements["criteria"]:
         index = achievements["criteria"].index(30103)
