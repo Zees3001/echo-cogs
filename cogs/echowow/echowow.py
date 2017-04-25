@@ -163,7 +163,7 @@ def get_artifact_info(player_dictionary):
 	for i in range(len(relicItems)):
             if (items[relicItems[i]]):
                 relicItem = items[relicItems[i]]
-                if (relicItem.quality === 6):
+                if (relicItem.quality == 6):
                     artifactRank = 0
                     relicCount += len(relicItems.relics)
                     
