@@ -163,20 +163,19 @@ def get_artifact_info(player_dictionary):
     for i in range(len(relicItems)):
         if relicItems[i] in items:
             relicItem = items[relicItems[i]]
-            print("Found: {0}".format(relicItems[i]))
+            #print("Found: {0}".format(relicItems[i]))
         else:
-            print("Not Found: {0}".format(relicItems[i]))
-            #if (relicItem["quality"] == 6):
-                #artifactRank = 0
-                #relicCount += len(relicItem["relics"])
-    print("Loop done.")
+            #print("Not Found: {0}".format(relicItems[i]))
+            if (relicItem["quality"] == 6):
+                artifactRank = 0
+                relicCount += len(relicItem["relics"])
+    #print("Loop done.")
 
-    '''
     if (items["mainHand"][artifactTraits][0]):
         for trait in range(len(items["mainHand"]["artifactTraits"])):
             artifactRank += items["mainHand"]["artifactTraits"][trait]["rank"]
             ar = artifactRank - relicCount
-    elif (items.offHand.artifactTraits[0]):
+    elif (items["offHand"][artifactTraits][0]):
         for trait in range(len(items["offHand"]["artifactTraits"])):
             artifactRank += items["offHand"]["artifactTraits"][trait]["rank"]
             ar = artifactRank - relicCount
@@ -188,7 +187,6 @@ def get_artifact_info(player_dictionary):
     if 31466 in achievements["criteria"]:
         index = achievements["criteria"].index(31466)
         ak = achievements["criteriaQuantity"][index]
-    '''
 
     return {
         "ar": ar,
