@@ -150,30 +150,30 @@ def get_mythic_progression(player_dictionary):
     }
 
 def get_artifact_info(player_dictionary):
-	ak = 0
-	ap = 0
-	ar = 0
+    ak = 0
+    ap = 0
+    ar = 0
 
-        achievements = player_dictionary["achievements"]
-        items = player_dictionary["items"]
+    achievements = player_dictionary["achievements"]
+    items = player_dictionary["items"]
 
-        relicItems = ["mainHand", "offHand"]
-        relicCount = 1
+    relicItems = ["mainHand", "offHand"]
+    relicCount = 1
 
-        for i in range(len(relicItems)):
-            if (items[relicItems[i]]):
-                relicItem = items[relicItems[i]]
-                if (relicItem.quality == 6):
-                    artifactRank = 0
-                    relicCount += len(relicItems.relics)
+    for i in range(len(relicItems)):
+        if (items[relicItems[i]]):
+            relicItem = items[relicItems[i]]
+            if (relicItem.quality == 6):
+                artifactRank = 0
+                relicCount += len(relicItems.relics)
 
-        if (items.mainHand.artifactTraits[0]):
-            for trait in range(len(items.mainHand.artifactTraits)):
-                artifactRank += items.mainHand.artifactTraits[trait].rank
+    if (items.mainHand.artifactTraits[0]):
+        for trait in range(len(items.mainHand.artifactTraits)):
+            artifactRank += items.mainHand.artifactTraits[trait].rank
             ar = artifactRank - relicCount
-        elif (items.offHand.artifactTraits[0]):
-            for trait in range(len(items.offHand.artifactTraits)):
-                artifactRank += items.offHand.artifactTraits[trait].rank
+    elif (items.offHand.artifactTraits[0]):
+        for trait in range(len(items.offHand.artifactTraits)):
+            artifactRank += items.offHand.artifactTraits[trait].rank
             ar = artifactRank - relicCount
     
 
@@ -181,19 +181,19 @@ def get_artifact_info(player_dictionary):
 #		index = achievements["criteria"].index(29395)
 #		ar = achievements["criteriaQuantity"][index]
 
-	if 30103 in achievements["criteria"]:
-		index = achievements["criteria"].index(30103)
-		ap = achievements["criteriaQuantity"][index]
+    if 30103 in achievements["criteria"]:
+        index = achievements["criteria"].index(30103)
+        ap = achievements["criteriaQuantity"][index]
 
-	if 31466 in achievements["criteria"]:
-		index = achievements["criteria"].index(31466)
-		ak = achievements["criteriaQuantity"][index]
+    if 31466 in achievements["criteria"]:
+        index = achievements["criteria"].index(31466)
+        ak = achievements["criteriaQuantity"][index]
 
-	return {
-		"ar": ar,
-		"ap": ap,
-		"ak": ak
-	}	
+    return {
+        "ar": ar,
+        "ap": ap,
+        "ak": ak
+    }	
 
 
 def get_char(name, server, target_region):
