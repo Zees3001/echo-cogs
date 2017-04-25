@@ -157,7 +157,7 @@ def get_artifact_info(player_dictionary):
 	achievements = player_dictionary["achievements"]
 	items = player_dictionary["items"]
 
-        relicItems = ["mainHand","offHand"]
+        relicItems = ["mainHand", "offHand"]
         relicCount = 1
 
         for i in range(len(relicItems)):
