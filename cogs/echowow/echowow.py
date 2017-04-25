@@ -158,14 +158,11 @@ def get_artifact_info(player_dictionary):
     items = player_dictionary["items"]
 
     relicItems = ["mainHand", "offHand"]
-    relicCount = 0
+    relicCount = 1
 
     for i in range(len(relicItems)):
         if relicItems[i] in items:
             relicItem = items[relicItems[i]]
-            #print("Found: {0}".format(relicItems[i]))
-        else:
-            #print("Not Found: {0}".format(relicItems[i]))
             if (relicItem["quality"] == 6):
                 artifactRank = 0
                 relicCount += len(relicItem["relics"])
