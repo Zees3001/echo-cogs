@@ -157,8 +157,8 @@ def get_artifact_info(player_dictionary):
 	achievements = player_dictionary["achievements"]
 	items = player_dictionary["items"]
 
-        relicItems = ["mainHand", "offHand"]
-        relicCount = 1
+	relicItems = ["mainHand", "offHand"]
+	relicCount = 1
 
         print "Init wowcheck"
 
