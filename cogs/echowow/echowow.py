@@ -166,12 +166,12 @@ def get_artifact_info(player_dictionary):
                 if (relicItem.quality == 6):
                     artifactRank = 0
                     relicCount += len(relicItems.relics)
-                    
-        if items.mainHand.artifactTraits[0]:
+
+        if (items.mainHand.artifactTraits[0]):
             for trait in range(len(items.mainHand.artifactTraits)):
                 artifactRank += items.mainHand.artifactTraits[trait].rank
             ar = artifactRank - relicCount
-        elif items.offHand.artifactTraits[0]:
+        elif (items.offHand.artifactTraits[0]):
             for trait in range(len(items.offHand.artifactTraits)):
                 artifactRank += items.offHand.artifactTraits[trait].rank
             ar = artifactRank - relicCount
