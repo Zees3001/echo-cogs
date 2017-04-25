@@ -158,7 +158,7 @@ def get_artifact_info(player_dictionary):
     items = player_dictionary["items"]
 
     relicItems = ["mainHand", "offHand"]
-    relicCount = 1
+    relicCount = 0
 
     for i in range(len(relicItems)):
         if relicItems[i] in items:
