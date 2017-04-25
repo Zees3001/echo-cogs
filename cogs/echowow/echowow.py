@@ -160,6 +160,8 @@ def get_artifact_info(player_dictionary):
         relicItems = ["mainHand", "offHand"]
         relicCount = 1
 
+        print "Init wowcheck"
+
  '''       for i in range(len(relicItems)):
             if (items[relicItems[i]]):
                 relicItem = items[relicItems[i]]
