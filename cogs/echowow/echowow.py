@@ -160,7 +160,7 @@ def get_artifact_info(player_dictionary):
         relicItems = ["mainHand", "offHand"]
         relicCount = 1
 
-        for i in range(len(relicItems)):
+ '''       for i in range(len(relicItems)):
             if (items[relicItems[i]]):
                 relicItem = items[relicItems[i]]
                 if (relicItem.quality === 6):
@@ -175,7 +175,7 @@ def get_artifact_info(player_dictionary):
             for trait in range(len(items.offHand.artifactTraits)):
                 artifactRank += items.offHand.artifactTraits[trait].rank
             ar = artifactRank - relicCount
-        
+'''        
 
 #	if 29395 in achievements["criteria"]:
 #		index = achievements["criteria"].index(29395)
